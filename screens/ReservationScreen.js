@@ -88,15 +88,16 @@ const ReservationScreen = () => {
 
             <View style={styles.formRow}>
                 <Button 
-                    onPress= {() => {handleReservation}}
+                    onPress= {() => {handleReservation()}}
                     title= "Search Availabilty"
                     color= "#5637DD"
-                    accessabiltiyLabel= "Tap me to search for available campsites to reserve"
+                    accessibilityLabel= "Tap me to search for available campsites to reserve"
                 />
             </View>
             <Modal 
                 animationType= "slide"
                 transparent= {false}
+                visible={showModal}
                 onRequestClose= {() => setShowModal(!showModal)}
             >
                 <View style= {styles.modal}>
@@ -143,7 +144,7 @@ const styles = StyleSheet.create({
     },
     modal: {
         justifyContent: "center",
-        marging: 20
+        margin: 20
     },
     modalTitle: {
         fontSize: 24,
